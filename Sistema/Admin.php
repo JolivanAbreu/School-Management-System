@@ -81,7 +81,7 @@
                 <div class="card__data">
                     <span class="card__description">Gerenciamento</span>
                     <h2 class="card__title">Alunos</h2>
-                    <a href="./Alunos.php" class="card__button">Gerenciar...</a>
+                    <a href="./CAlunos.php" class="card__button">Gerenciar...</a>
                 </div>
             </article>
 

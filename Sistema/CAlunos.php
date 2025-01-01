@@ -20,10 +20,9 @@
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <link rel="stylesheet" href="./css/School.css">
-    <link rel="stylesheet" href="./css/Cards.css">
     <link rel="stylesheet" href="./css/Aluno/Alunos.css">
 
-    <title>Professores</title>
+    <title>Gerenciamento de Alunos</title>
 </head>
 
 <body>
@@ -64,8 +63,8 @@
                         <li><a href="#">Fale Conosco</a></li>
                     </ul>
                 </li>
-                <li class="Nav-item"><a href="./Login.php"
-                        class="Nav-item">Cadastro/Login</a></li>
+                <li class="Nav-item"><a href="./Admin.php"
+                        class="Nav-item">Tela Inicial</a></li>
             </ul>
 
         </div>
@@ -73,9 +72,11 @@
     </header>
     <!-- NAVBAR -->
 
-    <!-- CARDS -->
-     
-    <!-- CARDS -->
+    <!-- INFORMAÇÕES -->
+
+    
+
+    <!-- INFORMAÇÕES -->
 
     <!-- BOTÃO DE ROLAGEM -->
     <button id="voltar">

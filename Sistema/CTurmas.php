@@ -19,11 +19,9 @@
     <script nomodule
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <link rel="stylesheet" href="./css/School.css">
-    <link rel="stylesheet" href="./css/Cards.css">
-    <link rel="stylesheet" href="./css/Turma/Turma.css">
+    <link rel="stylesheet" href="./css/Turma/CTurma.css">
 
-    <title>Cadastro de Turmas</title>
+    <title>Gerenciamento de Turmas</title>
 </head>
 
 <body>
@@ -64,8 +62,8 @@
                         <li><a href="#">Fale Conosco</a></li>
                     </ul>
                 </li>
-                <li class="Nav-item"><a href="./Login.php"
-                        class="Nav-item">Cadastro/Login</a></li>
+                <li class="Nav-item"><a href="./Admin.php"
+                        class="Nav-item">Tela Inicial</a></li>
             </ul>
 
         </div>
@@ -73,10 +71,10 @@
     </header>
     <!-- NAVBAR -->
 
-    <!-- INFORMAÇÕES -->
+    <!-- CADASTRO -->
 
     <<div class="background-container">
-        <div class="container">
+        <div class="Container">
             <h1>Cadastro de Turma</h1>
             <form method="post" action="./php/Turma/CTurmaCadastro.php" id="form-turma">
                 <label for="professor">Professor:</label>
@@ -97,14 +95,28 @@
                 <label for="horario">Horário:</label>
                 <input type="time" id="horario" name="horario" step="3600">
 
-                <button type="submit">Cadastrar Turma</button>
+                <button type="submit" class="Button">Cadastrar Turma</button>
             </form>
 
             <div id="turmas-cadastradas"></div>
         </div>
         </div>
-        
-    <!-- INFORMAÇÕES -->
+
+        <!-- CADASTRO -->
+
+        <!-- VISUALIZAÇÃO DAS TURMAS -->
+
+        <div class="VT">
+            <h1 class="VT_h1">Visualização de Turmas</h1>
+            <form method="post" action="./php/Aluno/CAluno.php" class="VT_Form">
+                <label for="turma" class="VT_Label">Turma:</label>
+                <select id="turma" name="turma">
+                    <?php include('./php/Turma/ListarTurmas.php'); ?>
+                </select>
+            </form>
+        </div>
+
+        <!-- VISUALIZAÇÃO DAS TURMAS -->
 
 
         <!-- BOTÃO DE ROLAGEM -->
