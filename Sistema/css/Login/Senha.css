@@ -1,0 +1,95 @@
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background: #adb5bd url(https://goo.gl/1yhE3P) top center no-repeat;
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+#box {
+    width: 400px;
+    margin: 10% auto;
+    text-align: center;
+    background: #e9ecef;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 12px #495057;
+    border-radius: 2%;
+}
+
+h1 {
+    margin-bottom: 1.5em;
+    font-size: 30px;
+    color: #212529;
+    font-weight: 100;
+}
+
+h1 span,
+small {
+    display: block;
+    font-size: 14px;
+    color: #495057;
+}
+
+span {
+    margin-top: 5px;
+}
+
+small {
+    font-style: italic;
+    font-size: 11px;
+}
+
+form p {
+    position: relative;
+}
+
+.password {
+    width: 90%;
+    padding: 15px 12px;
+    margin-bottom: 5px;
+    border: transparent;
+    border-bottom: transparent;
+    background: #f8f9fa;
+    color: #212529;
+}
+
+#button {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    outline: none;
+    border-radius: 2px;
+}
+
+/*========= Visualizar senha ========= */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+}
+
+.toggle-password i {
+    pointer-events: none;
+}

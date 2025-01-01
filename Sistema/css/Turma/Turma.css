@@ -1,0 +1,26 @@
+.container_turma {
+    display: flex;
+    gap: 2rem;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+    height: 100px;
+    flex-wrap: wrap;
+    margin-top: -60px;
+}
+
+.container {
+    margin-top: 190px;
+    background-color: #1b263b;
+    height: 250px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #edede9;
+}
+
+label {
+    color: #edede9;
+}
+
