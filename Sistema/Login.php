@@ -24,7 +24,7 @@
                         session_start();
                         if (isset($_SESSION['erro_login'])) {
                             echo "<p style='color: red;'>" . $_SESSION['erro_login'] . "</p>";
-                            unset($_SESSION['erro_login']); // Limpa a mensagem após exibi-la
+                            unset($_SESSION['erro_login']);
                         }
                         ?>
 

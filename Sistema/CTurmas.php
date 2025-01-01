@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="./css/Cards.css">
     <link rel="stylesheet" href="./css/Turma/Turma.css">
 
-    <title>Professores</title>
+    <title>Cadastro de Turmas</title>
 </head>
 
 <body>
@@ -74,19 +74,16 @@
     <!-- NAVBAR -->
 
     <!-- INFORMAÇÕES -->
-    <div class="container">
-        <div class="container_turma">
+
+    <<div class="background-container">
+        <div class="container">
             <h1>Cadastro de Turma</h1>
-            <form id="form-turma">
+            <form method="post" action="./php/Turma/CTurmaCadastro.php" id="form-turma">
                 <label for="professor">Professor:</label>
-                <select id="professor" name="professor">
-                    <!-- Professores serão carregados aqui -->
-                </select>
+                <select id="professor" name="professor"></select>
 
                 <label for="disciplina">Disciplina:</label>
-                <select id="disciplina" name="disciplina">
-                    <!-- Disciplinas serão carregadas aqui -->
-                </select>
+                <select id="disciplina" name="disciplina"></select>
 
                 <label for="dia">Dia da Semana:</label>
                 <select id="dia" name="dia">
@@ -102,19 +99,21 @@
 
                 <button type="submit">Cadastrar Turma</button>
             </form>
+
             <div id="turmas-cadastradas"></div>
         </div>
-    </div>
+        </div>
+        
     <!-- INFORMAÇÕES -->
 
 
-    <!-- BOTÃO DE ROLAGEM -->
-    <button id="voltar">
-        <i class="fa-solid fa-caret-up"></i>
-    </button>
+        <!-- BOTÃO DE ROLAGEM -->
+        <button id="voltar">
+            <i class="fa-solid fa-caret-up"></i>
+        </button>
 
-    <script src="./js/Turma.js"></script>
-    <script src="../js/index.js"></script>
+        <script src="./js/Turma.js"></script>
+        <script src="../js/index.js"></script>
 </body>
 
 </html>

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./css/School.css">
     <link rel="stylesheet" href="./css/Cards.css">
 
-    <title>Professores</title>
+    <title>Tela Inicial</title>
 </head>
 
 <body>

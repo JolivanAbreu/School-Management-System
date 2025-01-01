@@ -2,7 +2,6 @@
 
 session_start();
 
-// Conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,12 +9,10 @@ $dbname = "shoolmanagerdb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexão
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
 
-// Função para limpar os dados de entrada
 function limpar_dados($dados)
 {
     $dados = trim($dados);
@@ -53,7 +50,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<script>alert("Erro ao alterar senha ou email não encontrado!"); window.location.href = "../Senha.php";</script>';
     }
 
-    // Fecha a declaração e a conexão
     $stmt->close();
-    $conn->close();
 }
