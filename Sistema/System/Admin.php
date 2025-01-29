@@ -19,13 +19,13 @@
     <script nomodule
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <link rel="stylesheet" href="./css/Turma/CTurma.css">
+    <link rel="stylesheet" href="../css/School.css">
+    <link rel="stylesheet" href="../css/Cards.css">
 
-    <title>Gerenciamento de Turmas</title>
+    <title>Professores</title>
 </head>
 
 <body>
-
     <!-- NAVBAR -->
     <header>
 
@@ -62,8 +62,8 @@
                         <li><a href="#">Fale Conosco</a></li>
                     </ul>
                 </li>
-                <li class="Nav-item"><a href="./Admin.php"
-                        class="Nav-item">Tela Inicial</a></li>
+                <li class="Nav-item"><a href="../System/Login/Login.php"
+                        class="Nav-item">Cadastro/Login</a></li>
             </ul>
 
         </div>
@@ -71,53 +71,51 @@
     </header>
     <!-- NAVBAR -->
 
-    <!-- CADASTRO -->
+    <!-- CARDS 01° -->
+    <div class="container">
+        <div class="card__container">
+            <article class="card__article">
+                <img src="../img/Admin/graduado.png" alt="image"
+                    class="card__img">
 
-    <<div class="background-container">
-        <div class="Container">
-            <h1>Cadastro de Turma</h1>
-            <form method="post" action="./php/Turma/CTurmaCadastro.php" id="form-turma">
-                <label for="professor">Professor:</label>
-                <select id="professor" name="professor"></select>
+                <div class="card__data">
+                    <span class="card__description">Gerenciamento</span>
+                    <h2 class="card__title">Alunos</h2>
+                    <a href="../System/Aluno/CAlunos.php" class="card__button">Gerenciar...</a>
+                </div>
+            </article>
 
-                <label for="disciplina">Disciplina:</label>
-                <select id="disciplina" name="disciplina"></select>
+            <article class="card__article">
+                <img src="../img/Admin/Cursos.png" alt="image"
+                    class="card__img">
 
-                <label for="dia">Dia da Semana:</label>
-                <select id="dia" name="dia">
-                    <option value="segunda">Segunda-feira</option>
-                    <option value="terca">Terça-feira</option>
-                    <option value="quarta">Quarta-feira</option>
-                    <option value="quinta">Quinta-feira</option>
-                    <option value="sexta">Sexta-feira</option>
-                </select>
+                <div class="card__data">
+                    <span class="card__description">Gerenciamento</span>
+                    <h2 class="card__title">Disciplinas</h2>
+                    <a href="#" class="card__button">Gerenciar...</a>
+                </div>
+            </article>
 
-                <label for="horario">Horário:</label>
-                <input type="time" id="horario" name="horario" step="3600">
+            <article class="card__article">
+                <img src="../img/Admin/pessoas.png" alt="image"
+                    class="card__img">
 
-                <button type="submit" class="Button">Cadastrar Turma</button>
-            </form>
-
-            <div id="turmas-cadastradas"></div>
+                <div class="card__data">
+                    <span class="card__description">Gerenciamento</span>
+                    <h2 class="card__title">Turmas</h2>
+                    <a href="../System/Turma/CTurmas.php" class="card__button">Gerenciar...</a>
+                </div>
+            </article>
         </div>
-        </div>
+    </div>
+    <!-- CARDS 01° -->
 
-        <!-- CADASTRO -->
+    <!-- BOTÃO DE ROLAGEM -->
+    <button id="voltar">
+        <i class="fa-solid fa-caret-up"></i>
+    </button>
 
-        <!-- VISUALIZAÇÃO DAS TURMAS -->
-        <div class="VT">
-            
-        </div>
-        <!-- VISUALIZAÇÃO DAS TURMAS -->
-
-
-        <!-- BOTÃO DE ROLAGEM -->
-        <button id="voltar">
-            <i class="fa-solid fa-caret-up"></i>
-        </button>
-
-        <script src="./js/Turma.js"></script>
-        <script src="../js/index.js"></script>
+    <script src="../js/Index.js"></script>
 </body>
 
 </html>

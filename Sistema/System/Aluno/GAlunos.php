@@ -14,14 +14,15 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script type="module"
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <link rel="stylesheet" href="./css/Turma/CTurma.css">
+    <link rel="stylesheet" href="../../css/Aluno/CAlunos.css">
 
-    <title>Gerenciamento de Turmas</title>
+    <title>Gerenciamento de GAlunos</title>
 </head>
 
 <body>
@@ -62,7 +63,7 @@
                         <li><a href="#">Fale Conosco</a></li>
                     </ul>
                 </li>
-                <li class="Nav-item"><a href="./Admin.php"
+                <li class="Nav-item"><a href="./CAlunos.php"
                         class="Nav-item">Tela Inicial</a></li>
             </ul>
 
@@ -71,53 +72,18 @@
     </header>
     <!-- NAVBAR -->
 
-    <!-- CADASTRO -->
-
-    <<div class="background-container">
-        <div class="Container">
-            <h1>Cadastro de Turma</h1>
-            <form method="post" action="./php/Turma/CTurmaCadastro.php" id="form-turma">
-                <label for="professor">Professor:</label>
-                <select id="professor" name="professor"></select>
-
-                <label for="disciplina">Disciplina:</label>
-                <select id="disciplina" name="disciplina"></select>
-
-                <label for="dia">Dia da Semana:</label>
-                <select id="dia" name="dia">
-                    <option value="segunda">Segunda-feira</option>
-                    <option value="terca">Terça-feira</option>
-                    <option value="quarta">Quarta-feira</option>
-                    <option value="quinta">Quinta-feira</option>
-                    <option value="sexta">Sexta-feira</option>
-                </select>
-
-                <label for="horario">Horário:</label>
-                <input type="time" id="horario" name="horario" step="3600">
-
-                <button type="submit" class="Button">Cadastrar Turma</button>
-            </form>
-
-            <div id="turmas-cadastradas"></div>
-        </div>
-        </div>
-
-        <!-- CADASTRO -->
-
-        <!-- VISUALIZAÇÃO DAS TURMAS -->
-        <div class="VT">
-            
-        </div>
-        <!-- VISUALIZAÇÃO DAS TURMAS -->
+    <!-- INFORMAÇÕES DE EDIÇÃO E EXCLUSSÃO -->
 
 
-        <!-- BOTÃO DE ROLAGEM -->
-        <button id="voltar">
-            <i class="fa-solid fa-caret-up"></i>
-        </button>
 
-        <script src="./js/Turma.js"></script>
-        <script src="../js/index.js"></script>
+    <!-- INFORMAÇÕES -->
+
+    <!-- BOTÃO DE ROLAGEM -->
+    <button id="voltar">
+        <i class="fa-solid fa-caret-up"></i>
+    </button>
+
+    <script src="../../js/index.js"></script>
 </body>
 
 </html>

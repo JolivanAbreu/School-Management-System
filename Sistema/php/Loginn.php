@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['IdProfessor'] = $row['IdProfessor'];
         $_SESSION['Nome'] = $row['Nome'];
         $_SESSION['tipo'] = 'professores';
-        header("Location:../Admin.php");
+        header("Location:../System/Admin.php");
         exit();
     }
 
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result_aluno->num_rows == 1) {
         // Caso o login seja de um aluno, exibe uma mensagem de alerta e impede o login
         echo "<script>alert('Acesso negado! Alunos não têm permissão para acessar o sistema.');</script>";
-        echo "<script>window.location.href = '../School.php';</script>";
+        echo "<script>window.location.href = '../System/School.php';</script>";
         exit();
     }
     

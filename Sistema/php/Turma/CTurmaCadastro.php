@@ -36,16 +36,16 @@ $horario = $_POST['horario'];
 $proximaTurma = obterProximaTurma($conn);
 
 // Inserir turma no banco de dados
-$sql = "INSERT INTO Turmas (Nome, IdProfessor, IdDisciplina, Dia, Horario) 
+$sql = "INSERT INTO Turmas (Nome, IdProfessor, IdDisciplina, Dia, Horario)
         VALUES ('$proximaTurma', $professor, $disciplina, '$dia', '$horario')";
 
 if ($conn->query($sql) === TRUE) {
     echo "<script>alert('Turma cadastrada com sucesso: $proximaTurma');</script>";
-    echo "<script>window.location.href = '../../CTurmas.php';</script>";
+    echo "<script>window.location.href = '../../System/Turma/Admin.php';</script>";
     exit;
 } else {
     echo "<script>alert('Erro ao cadastrar turma: " . $conn->error . "');</script>";
-    echo "<script>window.location.href = '../../CTurmas.php';</script>";
+    echo "<script>window.location.href = '../../System/Turma/Admin.php';</script>";
     exit;
 }
 

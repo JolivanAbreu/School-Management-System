@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Atualiza a senha no banco de dados sem hash
     $sql_update = "UPDATE professores SET senha = ? WHERE email = ?";
-    $stmt = $conn->prepare($sql_update);
+    $stmt = $conn->prepare($sql_update);  
     $stmt->bind_param("ss", $nova_senha, $email);
 
     if ($stmt->execute() && $stmt->affected_rows > 0) {
