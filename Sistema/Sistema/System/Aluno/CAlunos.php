@@ -19,9 +19,9 @@
     <script nomodule
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <link rel="stylesheet" href="../../css/Turma/CTurmas.css">
+    <link rel="stylesheet" href="../../css/Aluno/CAluno.css">
 
-    <title>Gerenciamento de Turmas</title>
+    <title>Gerenciamento de Alunos</title>
 </head>
 
 <body>
@@ -71,43 +71,41 @@
     </header>
     <!-- NAVBAR -->
 
-    <!-- CADASTRO -->
+    <!-- INFORMAÇÕES -->
+
     <div class="Cadastro">
-        <section id="Turmas">
-            <h2 class="HTurmas"><i class="fas fa-chalkboard"></i> Cadastro de Turmas</h2>
-            <form method="post" id="turmaForm" class="FormTurmas" action="../../php/Turma/CTurma.php">
-                <label for="turmaNome" class="LabelTurmas">Nome:</label>
-                <input type="text" name="nome" id="turmaNome" class="InputTurmas" required>
+        <section class="Alunos">
+            <h2 class="H2Aluno"><i class="fas fa-user"></i> Cadastro de Alunos</h2>
+            <form action="" class="AlunosForm">
 
-                <label for="turmaProfessor" class="LabelTurmas">Professor:</label>
-                <select name="professor" id="turmaProfessor" class="InputTurmas" required></select>
+                <label for="alunoNome" class="LabelAluno">Nome:</label>
+                <input type="text" id="alunoNome" class="InputAlunos" required>
 
-                <label for="turmaDisciplina" class="LabelTurmas">Disciplina:</label>
-                <select name="disciplina" id="turmaDisciplina" class="InputTurmas" required></select>
+                <label for="alunoCpf" class="LabelAluno">CPF:</label>
+                <input type="text" id="alunoCpf" class="InputAlunos" required>
 
-                <label for="turmaDataInicio" class="LabelTurmas">Data de Início:</label>
-                <input type="date" name="dataInicio" id="turmaDataInicio" class="InputTurmas" required>
+                <label for="alunoEmail" class="LabelAluno">Email:</label>
+                <input type="email" id="alunoEmail" class="InputAlunos" required>
 
-                <label for="turmaDataFim" class="LabelTurmas">Data de Fim:</label>
-                <input type="date" name="dataFim" id="turmaDataFim" class="InputTurmas" required>
+                <label for="alunoDataNascimento" class="LabelAluno">Data de Nascimento:</label>
+                <input type="date" id="alunoDataNascimento" class="InputAlunos" required>
 
-                <button type="submit" class="ButtonTurmas">
-                    <i class="fas fa-plus-circle"></i> Adicionar Turma
-                </button>
+                <button type="submit" class="ButtonAlunos"><i class="fas fa-plus-circle"></i> Adicionar
+                    Aluno</button>
             </form>
-            <ul id="turmaList"></ul>
         </section>
     </div>
-    <!-- CADASTRO -->
 
-    <!-- VISUALIZAÇÃO DAS TURMAS -->
+    <!-- INFORMAÇÕES -->
+
+    <!-- VISUALIZAÇÃO DE ALUNOS -->
 
     <div class="Visualização">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2>Listagem de <b>Turmas</b></h2>
+                        <h2>Listagem de <b>Alunos</b></h2>
                     </div>
                 </div>
             </div>
@@ -115,7 +113,7 @@
                 <thead>
                     <tr>
                         <th>
-
+                            <input type="checkbox" id="selectAll">
                         </th>
                         <th>Name</th>
                         <th>Email</th>
@@ -165,16 +163,13 @@
         </div>
     </div>
 
-    <!-- VISUALIZAÇÃO DAS TURMAS -->
-     
-
+    <!-- VISUALIZAÇÃO DE ALUNOS -->
 
     <!-- BOTÃO DE ROLAGEM -->
     <button id="voltar">
         <i class="fa-solid fa-caret-up"></i>
     </button>
 
-    <script src="../../js/Turma.js"></script>
     <script src="../../js/index.js"></script>
 </body>
 

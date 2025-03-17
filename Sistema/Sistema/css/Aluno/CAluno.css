@@ -151,8 +151,7 @@ body {
 .InputAlunos[type="text"],
 .InputAlunos[type="email"],
 .InputAlunos[type="date"],
-.InputAlunos[type="number"]
-.InputAlunos[type="password"] {
+.InputAlunos[type="number"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;

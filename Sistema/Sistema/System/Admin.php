@@ -19,13 +19,13 @@
     <script nomodule
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <link rel="stylesheet" href="../../css/Aluno/CAluno.css">
+    <link rel="stylesheet" href="../css/School.css">
+    <link rel="stylesheet" href="../css/Cards.css">
 
-    <title>Gerenciamento de Alunos</title>
+    <title>Professores</title>
 </head>
 
 <body>
-
     <!-- NAVBAR -->
     <header>
 
@@ -62,8 +62,8 @@
                         <li><a href="#">Fale Conosco</a></li>
                     </ul>
                 </li>
-                <li class="Nav-item"><a href="./Admin.php"
-                        class="Nav-item">Tela Inicial</a></li>
+                <li class="Nav-item"><a href="../System/Login/Login.php"
+                        class="Nav-item">Cadastro/Login</a></li>
             </ul>
 
         </div>
@@ -71,45 +71,51 @@
     </header>
     <!-- NAVBAR -->
 
-    <!-- CADASTRO -->
-    <div class="Cadastro">
-        <section class="Alunos">
-            <h2 class="H2Aluno"><i class="fas fa-user"></i> Cadastro de Alunos</h2>
-            <form action="../../php/Aluno/CAluno.php" method="POST" class="AlunosForm">
+    <!-- CARDS 01° -->
+    <div class="container">
+        <div class="card__container">
+            <article class="card__article">
+                <img src="../img/Admin/graduado.png" alt="image"
+                    class="card__img">
 
-                <label for="alunoNome" class="LabelAluno">Nome:</label>
-                <input type="text" name="nome" id="alunoNome" class="InputAlunos" required>
+                <div class="card__data">
+                    <span class="card__description">Gerenciamento</span>
+                    <h2 class="card__title">Alunos</h2>
+                    <a href="../System/Aluno/CAlunos.php" class="card__button">Gerenciar...</a>
+                </div>
+            </article>
 
-                <label for="alunoCpf" class="LabelAluno">CPF:</label>
-                <input type="text" name="cpf" id="alunoCpf" class="InputAlunos" required>
+            <article class="card__article">
+                <img src="../img/Admin/Cursos.png" alt="image"
+                    class="card__img">
 
-                <label for="alunoEmail" class="LabelAluno">Email:</label>
-                <input type="email" name="email" id="alunoEmail" class="InputAlunos" required>
+                <div class="card__data">
+                    <span class="card__description">Gerenciamento</span>
+                    <h2 class="card__title">Disciplinas</h2>
+                    <a href="#" class="card__button">Gerenciar...</a>
+                </div>
+            </article>
 
-                <label for="alunoDataNascimento" class="LabelAluno">Data de Nascimento:</label>
-                <input type="date" name="data_nascimento" id="alunoDataNascimento" class="InputAlunos" required>
+            <article class="card__article">
+                <img src="../img/Admin/pessoas.png" alt="image"
+                    class="card__img">
 
-                <label for="alunoSenha" class="LabelAluno">Senha:</label>
-                <input type="password" name="senha" id="alunoSenha" class="InputAlunos" required>
-
-                <button type="submit" class="ButtonAlunos"><i class="fas fa-plus-circle"></i> Adicionar Aluno</button>
-            </form>
-        </section>
+                <div class="card__data">
+                    <span class="card__description">Gerenciamento</span>
+                    <h2 class="card__title">Turmas</h2>
+                    <a href="../System/Turma/CTurmas.php" class="card__button">Gerenciar...</a>
+                </div>
+            </article>
+        </div>
     </div>
-    <!-- CADASTRO -->
-
-    <!-- VISUALIZAÇÃO DE ALUNOS -->
-
-    <?php include('../../php/Aluno/LAluno.php'); ?>
-
-    <!-- VISUALIZAÇÃO DE ALUNOS -->
+    <!-- CARDS 01° -->
 
     <!-- BOTÃO DE ROLAGEM -->
     <button id="voltar">
         <i class="fa-solid fa-caret-up"></i>
     </button>
 
-    <script src="../../js/index.js"></script>
+    <script src="../js/Index.js"></script>
 </body>
 
 </html>

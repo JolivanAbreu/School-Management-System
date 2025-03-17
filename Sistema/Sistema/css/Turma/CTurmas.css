@@ -114,23 +114,54 @@ body {
 
 /*  NAVBAR  */
 
+
+/* CADASTRO */
+
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 100px;
+    margin-inline: 1.5rem;
+    height: 30vh;
+    border-radius: 10px;
+    color: #edede9;
+    background-color: #1b263b;
+}
+
+.Button {
+    background-color: #edede9;
+    color: #1b263b;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* CADASTRO */
+
 .Cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 70px;
+    margin-top: 50px;
     margin-inline: 1.5rem;
+    padding: 2rem;
     border-radius: 10px;
     color: #edede9;
     /* background-color: #1b263b; */
 }
 
-.H2Aluno {
+.HTurmas {
     color: #1b263b;
 }
 
-.Alunos {
+
+section {
     background: #fff;
     margin: 15px 0;
     padding: 20px;
@@ -138,28 +169,27 @@ body {
     box-shadow: 0 4px 10px #1b263b;
 }
 
-.AlunosForm {
+.FormTurmas {
     margin-bottom: 20px;
 }
 
-.LabelAluno {
+.LabelTurmas {
     display: block;
     margin: 10px 0 5px;
     color: #1b263b;
 }
 
-.InputAlunos[type="text"],
-.InputAlunos[type="email"],
-.InputAlunos[type="date"],
-.InputAlunos[type="number"]
-.InputAlunos[type="password"] {
+.InputTurmas[type="text"],
+.InputTurmas[type="email"],
+.InputTurmas[type="date"],
+.InputTurmas[type="number"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.ButtonAlunos {
+.ButtonTurmas {
     background: #50e3c2;
     color: #fff;
     padding: 10px 15px;
@@ -169,19 +199,21 @@ body {
     transition: background 0.3s ease;
 }
 
-.ButtonAlunos:hover {
+.ButtonTurmas:hover {
     background: #4a90e2;
 }
 
-.ButtonAlunos>i {
+.ButtonTurmas i {
     margin-right: 5px;
 }
 
-.ButtonAlunos {
+.ButtonTurmas {
     margin-top: 6px;
 }
 
-/* VISUALIZAÇÃO DE ALUNOS */
+/* CADASTRO */
+
+/* VISUALIZAÇÃO DE TURMAS */
 
 .Visualização {
     flex-direction: column;
@@ -190,6 +222,7 @@ body {
     padding: 2rem;
     border-radius: 10px;
     color: #333;
+    margin-top: -70px;
 }
 
 .table-wrapper {
@@ -252,5 +285,3 @@ table.table td i {
 table.table td #delete {
     margin-left: 15px;
 }
-
-/* VISUALIZAÇÃO DE ALUNOS */

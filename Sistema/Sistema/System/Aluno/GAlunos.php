@@ -14,14 +14,15 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script type="module"
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <link rel="stylesheet" href="../../css/Aluno/CAluno.css">
+    <link rel="stylesheet" href="../../css/Aluno/CAlunos.css">
 
-    <title>Gerenciamento de Alunos</title>
+    <title>Gerenciamento de GAlunos</title>
 </head>
 
 <body>
@@ -62,7 +63,7 @@
                         <li><a href="#">Fale Conosco</a></li>
                     </ul>
                 </li>
-                <li class="Nav-item"><a href="./Admin.php"
+                <li class="Nav-item"><a href="./CAlunos.php"
                         class="Nav-item">Tela Inicial</a></li>
             </ul>
 
@@ -71,38 +72,11 @@
     </header>
     <!-- NAVBAR -->
 
-    <!-- CADASTRO -->
-    <div class="Cadastro">
-        <section class="Alunos">
-            <h2 class="H2Aluno"><i class="fas fa-user"></i> Cadastro de Alunos</h2>
-            <form action="../../php/Aluno/CAluno.php" method="POST" class="AlunosForm">
+    <!-- INFORMAÇÕES DE EDIÇÃO E EXCLUSSÃO -->
 
-                <label for="alunoNome" class="LabelAluno">Nome:</label>
-                <input type="text" name="nome" id="alunoNome" class="InputAlunos" required>
 
-                <label for="alunoCpf" class="LabelAluno">CPF:</label>
-                <input type="text" name="cpf" id="alunoCpf" class="InputAlunos" required>
 
-                <label for="alunoEmail" class="LabelAluno">Email:</label>
-                <input type="email" name="email" id="alunoEmail" class="InputAlunos" required>
-
-                <label for="alunoDataNascimento" class="LabelAluno">Data de Nascimento:</label>
-                <input type="date" name="data_nascimento" id="alunoDataNascimento" class="InputAlunos" required>
-
-                <label for="alunoSenha" class="LabelAluno">Senha:</label>
-                <input type="password" name="senha" id="alunoSenha" class="InputAlunos" required>
-
-                <button type="submit" class="ButtonAlunos"><i class="fas fa-plus-circle"></i> Adicionar Aluno</button>
-            </form>
-        </section>
-    </div>
-    <!-- CADASTRO -->
-
-    <!-- VISUALIZAÇÃO DE ALUNOS -->
-
-    <?php include('../../php/Aluno/LAluno.php'); ?>
-
-    <!-- VISUALIZAÇÃO DE ALUNOS -->
+    <!-- INFORMAÇÕES -->
 
     <!-- BOTÃO DE ROLAGEM -->
     <button id="voltar">

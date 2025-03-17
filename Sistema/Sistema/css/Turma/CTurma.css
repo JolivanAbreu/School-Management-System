@@ -114,143 +114,50 @@ body {
 
 /*  NAVBAR  */
 
-.Cadastro {
+
+/* CADASTRO */
+
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 100px;
+    margin-inline: 1.5rem;
+    height: 30vh;
+    border-radius: 10px;
+    color: #edede9;
+    background-color: #1b263b;
+}
+
+.Button {
+    background-color: #edede9;
+    color: #1b263b;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* CADASTRO */
+
+/* VISUALIZAÇÃO DAS TURMAS */
+
+.VT {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 70px;
+    margin-top: 50px;
     margin-inline: 1.5rem;
-    border-radius: 10px;
-    color: #edede9;
-    /* background-color: #1b263b; */
-}
-
-.H2Aluno {
-    color: #1b263b;
-}
-
-.Alunos {
-    background: #fff;
-    margin: 15px 0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px #1b263b;
-}
-
-.AlunosForm {
-    margin-bottom: 20px;
-}
-
-.LabelAluno {
-    display: block;
-    margin: 10px 0 5px;
-    color: #1b263b;
-}
-
-.InputAlunos[type="text"],
-.InputAlunos[type="email"],
-.InputAlunos[type="date"],
-.InputAlunos[type="number"]
-.InputAlunos[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.ButtonAlunos {
-    background: #50e3c2;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.ButtonAlunos:hover {
-    background: #4a90e2;
-}
-
-.ButtonAlunos>i {
-    margin-right: 5px;
-}
-
-.ButtonAlunos {
-    margin-top: 6px;
-}
-
-/* VISUALIZAÇÃO DE ALUNOS */
-
-.Visualização {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
     padding: 2rem;
     border-radius: 10px;
-    color: #333;
+    color: #edede9;
+    background-color: #1b263b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.table-wrapper {
-    background: #fff;
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 3px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-}
 
-.table-title {
-    padding: 15px;
-    background: #1b263b;
-    color: #fff;
-    border-radius: 3px 3px 0 0;
-}
-
-.table-title h2 {
-    margin: 5px 0 0;
-    font-size: 24px;
-}
-
-table.table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table.table th,
-table.table td {
-    padding: 12px 15px;
-    border: 1px solid #e9e9e9;
-    text-align: left;
-}
-
-table.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2;
-}
-
-table.table-hover tbody tr:hover {
-    background: #eaeaea;
-}
-
-table.table td a {
-    color: #1b263b;
-    text-decoration: none;
-}
-
-table.table td a.edit {
-    color: #FFC107;
-}
-
-table.table td a.delete {
-    color: #F44336;
-}
-
-table.table td i {
-    font-size: 18px;
-}
-
-table.table td #delete {
-    margin-left: 15px;
-}
-
-/* VISUALIZAÇÃO DE ALUNOS */
+/* VISUALIZAÇÃO DAS TURMAS */
