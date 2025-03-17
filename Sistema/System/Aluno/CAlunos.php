@@ -71,36 +71,97 @@
     </header>
     <!-- NAVBAR -->
 
-    <!-- CADASTRO -->
+    <!-- INFORMAÇÕES -->
+
     <div class="Cadastro">
         <section class="Alunos">
             <h2 class="H2Aluno"><i class="fas fa-user"></i> Cadastro de Alunos</h2>
-            <form action="../../php/Aluno/CAluno.php" method="POST" class="AlunosForm">
+            <form action="" class="AlunosForm">
 
                 <label for="alunoNome" class="LabelAluno">Nome:</label>
-                <input type="text" name="nome" id="alunoNome" class="InputAlunos" required>
+                <input type="text" id="alunoNome" class="InputAlunos" required>
 
                 <label for="alunoCpf" class="LabelAluno">CPF:</label>
-                <input type="text" name="cpf" id="alunoCpf" class="InputAlunos" required>
+                <input type="text" id="alunoCpf" class="InputAlunos" required>
 
                 <label for="alunoEmail" class="LabelAluno">Email:</label>
-                <input type="email" name="email" id="alunoEmail" class="InputAlunos" required>
+                <input type="email" id="alunoEmail" class="InputAlunos" required>
 
                 <label for="alunoDataNascimento" class="LabelAluno">Data de Nascimento:</label>
-                <input type="date" name="data_nascimento" id="alunoDataNascimento" class="InputAlunos" required>
+                <input type="date" id="alunoDataNascimento" class="InputAlunos" required>
 
-                <label for="alunoSenha" class="LabelAluno">Senha:</label>
-                <input type="password" name="senha" id="alunoSenha" class="InputAlunos" required>
-
-                <button type="submit" class="ButtonAlunos"><i class="fas fa-plus-circle"></i> Adicionar Aluno</button>
+                <button type="submit" class="ButtonAlunos"><i class="fas fa-plus-circle"></i> Adicionar
+                    Aluno</button>
             </form>
         </section>
     </div>
-    <!-- CADASTRO -->
+
+    <!-- INFORMAÇÕES -->
 
     <!-- VISUALIZAÇÃO DE ALUNOS -->
 
-    <?php include('../../php/Aluno/LAluno.php'); ?>
+    <div class="Visualização">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Listagem de <b>Alunos</b></h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" id="selectAll">
+                        </th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                        </td>
+                        <td>Dominique Perrier</td>
+                        <td>dominiqueperrier@mail.com</td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+                                <i class="fa-solid fa-trash" id="delete"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="checkbox2" name="options[]" value="1">
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+                                <i class="fa-solid fa-trash" id="delete"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <!-- Adicionar mais linhas conforme necessário -->
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <!-- VISUALIZAÇÃO DE ALUNOS -->
 

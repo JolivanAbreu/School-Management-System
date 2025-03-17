@@ -1,9 +1,0 @@
-<?php
-session_start();
-unset($_SESSION['Email']);
-unset($_SESSION['Senha']);
-unset($_SESSION['Nome']);
-unset($_SESSION['IdProfessor']);
-session_destroy();
-header('location:../School.php');
-exit();

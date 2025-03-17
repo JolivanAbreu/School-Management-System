@@ -75,25 +75,24 @@
     <div class="Cadastro">
         <section id="Turmas">
             <h2 class="HTurmas"><i class="fas fa-chalkboard"></i> Cadastro de Turmas</h2>
-            <form method="post" id="turmaForm" class="FormTurmas" action="../../php/Turma/CTurma.php">
+            <form method="post" id="turmaForm" class="FormTurmas" action="../../php/Turma/">
+
                 <label for="turmaNome" class="LabelTurmas">Nome:</label>
-                <input type="text" name="nome" id="turmaNome" class="InputTurmas" required>
+                <input type="text" id="turmaNome" class="InputTurmas" required>
 
-                <label for="turmaProfessor" class="LabelTurmas">Professor:</label>
-                <select name="professor" id="turmaProfessor" class="InputTurmas" required></select>
+                <label for="turmaProfessor" class="LabelTurmas">Professor ID:</label>
+                <select name="professor" id="turmaProfessor" class="InputTurmas"></select>
 
-                <label for="turmaDisciplina" class="LabelTurmas">Disciplina:</label>
-                <select name="disciplina" id="turmaDisciplina" class="InputTurmas" required></select>
+                <label for="turmaDisciplina" class="LabelTurmas">Disciplina ID:</label>
+                <select name="disciplina" id="turmaDisciplina" class="InputTurmas"></select>
 
                 <label for="turmaDataInicio" class="LabelTurmas">Data de Início:</label>
-                <input type="date" name="dataInicio" id="turmaDataInicio" class="InputTurmas" required>
+                <input type="date" id="turmaDataInicio" class="InputTurmas" required>
 
                 <label for="turmaDataFim" class="LabelTurmas">Data de Fim:</label>
-                <input type="date" name="dataFim" id="turmaDataFim" class="InputTurmas" required>
+                <input type="date" id="turmaDataFim" class="InputTurmas" required>
 
-                <button type="submit" class="ButtonTurmas">
-                    <i class="fas fa-plus-circle"></i> Adicionar Turma
-                </button>
+                <button type="submit" class="ButtonTurmas"><i class="fas fa-plus-circle"></i> Adicionar Turma</button>
             </form>
             <ul id="turmaList"></ul>
         </section>
@@ -115,7 +114,7 @@
                 <thead>
                     <tr>
                         <th>
-
+                            
                         </th>
                         <th>Name</th>
                         <th>Email</th>
@@ -135,10 +134,10 @@
                         <td></td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                <i class="fa-solid fa-pen"></i>
+                            <i class="fa-solid fa-pen"></i>
                             </a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                                <i class="fa-solid fa-trash" id="delete"></i>
+                            <i class="fa-solid fa-trash" id="delete"></i>
                             </a>
                         </td>
                     </tr>
@@ -152,10 +151,10 @@
                         <td></td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                <i class="fa-solid fa-pen"></i>
+                            <i class="fa-solid fa-pen"></i>
                             </a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                                <i class="fa-solid fa-trash" id="delete"></i>
+                            <i class="fa-solid fa-trash" id="delete"></i>
                             </a>
                         </td>
                     </tr>
@@ -166,7 +165,6 @@
     </div>
 
     <!-- VISUALIZAÇÃO DAS TURMAS -->
-     
 
 
     <!-- BOTÃO DE ROLAGEM -->
@@ -174,8 +172,8 @@
         <i class="fa-solid fa-caret-up"></i>
     </button>
 
-    <script src="../../js/Turma.js"></script>
-    <script src="../../js/index.js"></script>
+    <script src="../js/Turma.js"></script>
+    <script src="../js/index.js"></script>
 </body>
 
 </html>
