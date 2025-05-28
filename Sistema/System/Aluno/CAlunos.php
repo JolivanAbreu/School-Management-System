@@ -76,19 +76,19 @@
     <div class="Cadastro">
         <section class="Alunos">
             <h2 class="H2Aluno"><i class="fas fa-user"></i> Cadastro de Alunos</h2>
-            <form action="" class="AlunosForm">
+            <form action="../../php/Aluno/CAluno.php" method="POST" class="AlunosForm">
 
                 <label for="alunoNome" class="LabelAluno">Nome:</label>
-                <input type="text" id="alunoNome" class="InputAlunos" required>
+                <input type="text" id="alunoNome" class="InputAlunos" name="nome" required>
 
                 <label for="alunoCpf" class="LabelAluno">CPF:</label>
-                <input type="text" id="alunoCpf" class="InputAlunos" required>
+                <input type="text" id="alunoCpf" class="InputAlunos" name="cpf">
 
                 <label for="alunoEmail" class="LabelAluno">Email:</label>
-                <input type="email" id="alunoEmail" class="InputAlunos" required>
+                <input type="email" id="alunoEmail" class="InputAlunos" name="email" required>
 
                 <label for="alunoDataNascimento" class="LabelAluno">Data de Nascimento:</label>
-                <input type="date" id="alunoDataNascimento" class="InputAlunos" required>
+                <input type="date" id="alunoDataNascimento" class="InputAlunos" name="data_nascimento">
 
                 <button type="submit" class="ButtonAlunos"><i class="fas fa-plus-circle"></i> Adicionar
                     Aluno</button>
