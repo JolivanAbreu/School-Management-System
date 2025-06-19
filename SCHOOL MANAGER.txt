@@ -1,0 +1,73 @@
+SCHOOL MANAGER
+│
+├── Banco de Dados
+│   └── schoolmanagerdb.sql
+│
+├── Sistema
+│   ├── css
+|   │   ├── Aluno
+│   │   │   ├── Alunos.css
+│   │   │   └── CAluno.css
+│   │   │
+|   │   ├── Disciplina
+│   │   │   └── CDisciplinas.css
+│   │   │
+|   │   ├── Login
+│   │   │   ├── G_Senha.css
+│   │   │   ├── Login.css
+│   │   │   └── Senha.css
+│   │   │
+|   │   ├── Turma
+│   │   │   ├── Cturma.css
+│   │   │   └── CTurmas.css
+|   |   |
+│   │   ├── Cards.css
+│   │   └── School.css
+│   │
+│   ├── img
+│   │
+│   ├── js
+│   │   ├── Aluno.js
+│   │   ├── Disciplina.js
+│   │   ├── Index.js
+│   │   ├── Senha.js
+│   │   └── Turma.js
+│   │
+│   ├── php
+│   │   ├── Aluno
+│   │   │   ├── CAluno.php
+│   │   │   └── LAluno.php
+│   │   │
+│   │   ├── Disciplina
+│   │   │   └── CDisciplina.php
+│   │   │
+│   │   ├── Turma
+│   │   │   ├── CTurma.php
+│   │   │   ├── CTurmaCadastro.php
+│   │   │   ├── LDadosTurma.php
+│   │   │   └── ListarTurmas.php
+│   │   │
+│   │   ├── Login.php
+│   │   ├── Logoff.php
+│   │   └── Password.php
+│   │
+│   ├── System
+│   │   ├── Aluno
+│   │   │   └── CAlunos.php
+│   │   │   └── GAlunos.php
+│   │   │
+│   │   ├── Disciplina
+│   │   │   └── CDisciplinas.php
+│   │   │   └── GDisciplinas.php
+│   │   │
+│   │   ├── Login
+│   │   │   ├── GSenha.php
+│   │   │   └── Login.php
+│   │   │   └── Senha.php
+│   │   │
+│   │   └── Turma
+│   │       └── CTurmas.php
+│   │       └── GTurmas.php
+│   │
+│   ├── Admin.php
+│   └── School.php
