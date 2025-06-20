@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01/01/2025 às 18:07
+-- Tempo de geração: 20/06/2025 às 23:33
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -33,6 +33,8 @@ CREATE TABLE `alunos` (
   `Nota` decimal(5,2) NOT NULL,
   `Frequencia` decimal(5,2) DEFAULT NULL,
   `Email` varchar(100) DEFAULT NULL,
+  `Endereco` text DEFAULT NULL,
+  `Telefone` varchar(25) DEFAULT NULL,
   `Senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -40,9 +42,10 @@ CREATE TABLE `alunos` (
 -- Despejando dados para a tabela `alunos`
 --
 
-INSERT INTO `alunos` (`IdAluno`, `Nome`, `Nota`, `Frequencia`, `Email`, `Senha`) VALUES
-(1, 'Carlos Souza', 88.50, 92.00, 'carlos.souza@escola.com', 'senha789'),
-(2, 'Ana Paula', 75.00, 85.00, 'ana.paula@escola.com', 'senha101');
+INSERT INTO `alunos` (`IdAluno`, `Nome`, `Nota`, `Frequencia`, `Email`, `Endereco`, `Telefone`, `Senha`) VALUES
+(1, 'Carlos Souza', 88.50, 92.00, 'carlos.souza@escola.com', NULL, NULL, 'senha789'),
+(2, 'Ana Paula', 75.00, 85.00, 'ana.paula@escola.com', NULL, NULL, 'senha101'),
+(5, 'Teste 1', 0.00, NULL, 'teste1@escola.com', NULL, NULL, '$2y$10$55gYE0d13n78mVfRUDSbT.n8MUoTqyPXKgYfDZTDxc6fLjV9UyuKC');
 
 -- --------------------------------------------------------
 
@@ -108,7 +111,8 @@ CREATE TABLE `turmas` (
 
 INSERT INTO `turmas` (`IdTurma`, `Nome`, `IdProfessor`, `IdDisciplina`, `Dia`, `Horario`) VALUES
 (1, 'Turma A', 1, 1, 'Segunda-feira', '08:00-10:0'),
-(2, 'Turma B', 2, 2, 'Terça-feira', '10:00-12:0');
+(2, 'Turma B', 2, 2, 'Terça-feira', '10:00-12:0'),
+(18, 'Teste 1', 1, 2, '', '');
 
 --
 -- Índices para tabelas despejadas
@@ -150,7 +154,7 @@ ALTER TABLE `turmas`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `IdAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `disciplinas`
@@ -168,7 +172,7 @@ ALTER TABLE `professores`
 -- AUTO_INCREMENT de tabela `turmas`
 --
 ALTER TABLE `turmas`
-  MODIFY `IdTurma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `IdTurma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restrições para tabelas despejadas

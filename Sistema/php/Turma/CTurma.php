@@ -12,36 +12,39 @@ if ($conn->connect_error) {
     die(json_encode(["success" => false, "message" => "Falha na conexão com o banco de dados."]));
 }
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $professor_id = $_POST['professor_id'];
     $disciplina_id = $_POST['disciplina_id'];
-    $data_inicio = $_POST['data_inicio'];
-    $data_fim = $_POST['data_fim'];
 
-    if (empty($nome) || empty($professor_id) || empty($disciplina_id) || empty($data_inicio) || empty($data_fim)) {
-        echo json_encode(["success" => false, "message" => "Todos os campos são obrigatórios."]);
+    if (empty($nome) || empty($professor_id) || empty($disciplina_id)) {
+        echo json_encode(["success" => false, "message" => "Nome, professor e disciplina são obrigatórios."]);
         $conn->close();
         exit();
     }
 
-    $sql = "INSERT INTO turmas (Nome, Professor_ID, Disciplina_ID, DataInicio, DataFim) VALUES (?, ?, ?, ?, ?)";
+    $checkSql = "SELECT IdTurma FROM turmas WHERE Nome = ? AND IdProfessor = ? AND IdDisciplina = ?";
+    $checkStmt = $conn->prepare($checkSql);
+    $checkStmt->bind_param("sii", $nome, $professor_id, $disciplina_id);
+    $checkStmt->execute();
+    $result = $checkStmt->get_result();
 
-    $stmt = $conn->prepare($sql);
-
-    if ($stmt === false) {
-        die(json_encode(["success" => false, "message" => "Erro ao preparar a query: " . $conn->error]));
-    }
-
-    $stmt->bind_param("siiss", $nome, $professor_id, $disciplina_id, $data_inicio, $data_fim);
-
-    if ($stmt->execute()) {
-        echo json_encode(["success" => true, "message" => "Turma cadastrada com sucesso!"]);
+    if ($result->num_rows > 0) {
+        echo json_encode(["success" => false, "message" => "Esta turma já foi cadastrada."]);
     } else {
-        echo json_encode(["success" => false, "message" => "Erro ao cadastrar a turma: " . $stmt->error]);
-    }
+        $insertSql = "INSERT INTO turmas (Nome, IdProfessor, IdDisciplina) VALUES (?, ?, ?)";
+        $insertStmt = $conn->prepare($insertSql);
+        $insertStmt->bind_param("sii", $nome, $professor_id, $disciplina_id);
 
-    $stmt->close();
+        if ($insertStmt->execute()) {
+            echo json_encode(["success" => true, "message" => "Turma cadastrada com sucesso!"]);
+        } else {
+            echo json_encode(["success" => false, "message" => "Erro ao cadastrar a turma: " . $insertStmt->error]);
+        }
+        $insertStmt->close();
+    }
+    $checkStmt->close();
 } else {
     echo json_encode(["success" => false, "message" => "Método de requisição inválido."]);
 }

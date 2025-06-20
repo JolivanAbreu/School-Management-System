@@ -43,9 +43,7 @@ SCHOOL MANAGER
 │   │   │
 │   │   ├── Turma
 │   │   │   ├── CTurma.php
-│   │   │   ├── CTurmaCadastro.php
-│   │   │   ├── LDadosTurma.php
-│   │   │   └── ListarTurmas.php
+│   │   │   └── LDadosTurma.php
 │   │   │
 │   │   ├── Login.php
 │   │   ├── Logoff.php
