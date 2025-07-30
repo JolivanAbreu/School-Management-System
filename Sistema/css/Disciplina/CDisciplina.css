@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #edede9;
+}
+
+/*  NAVBAR  */
+/* NAVBAR*/
+.Navbar {
+    width: 100%;
+    position: fixed;
+    background: #edede9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    top: 0;
+    z-index: 1000;
+    transition: 0.3s ease-in-out;
+}
+
+.Logo {
+    font-size: 1.8em;
+    font-weight: 800;
+    text-decoration: none;
+    color: #1b263b;
+}
+
+.Nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.Nav-menu .Nav-item a {
+    height: 100%;
+    display: block;
+    color: #1b263b;
+    padding: 0 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.Nav-menu .Nav-item:hover a {
+    color: #1b263b;
+    background: #edede9;
+}
+
+.Nav-menu .Nav-item ul {
+    position: absolute;
+    list-style: none;
+    display: none;
+    padding: 5px 0;
+}
+
+.Nav-menu .Nav-item:hover ul {
+    display: block;
+    background: #edede9;
+}
+
+.Nav-menu .Nav-item ul li a {
+    color: #1b263b;
+    padding: 10px 20px;
+    display: block;
+}
+
+.Nav-menu .Nav-item ul li:hover a {
+    color: #edede9;
+    background: #1b263b;
+}
+
+/* Responsive Menu */
+.Hamburger {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #1b263b;
+}
+
+/* Media Query for Responsiveness */
+@media screen and (max-width: 768px) {
+    .Nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: #edede9;
+        z-index: 999;
+    }
+
+    .Nav-menu.active {
+        display: flex;
+    }
+
+    .Nav-item {
+        text-align: center;
+    }
+
+    .Hamburger {
+        display: block;
+    }
+}
+
+/*  NAVBAR  */
+
+.Cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 50px;
+    margin-inline: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    /* Adicionado para consistência */
+}
+
+/* Estilo para a seção do formulário de disciplinas */
+.Disciplinas {
+    background: #fff;
+    width: 100%;
+    margin: 15px 0;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-left: 730PX;
+    margin-top: 50px;
+}
+
+/* Estilo para o título H2 */
+.H2Disciplina {
+    color: #1b263b;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    /* Dando um pouco mais de peso para o título */
+}
+
+/* Estilo para o formulário */
+.DisciplinasForm {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para as labels dos campos */
+.LabelDisciplina {
+    display: block;
+    margin: 10px 0 5px;
+    color: #1b263b;
+    font-weight: 600;
+}
+
+/* Estilo para os campos de input e textarea */
+.InputDisciplina[type="text"],
+.InputDisciplina.TextareaDisciplina {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    /* Garantindo que a fonte seja aplicada */
+}
+
+/* Foco nos inputs */
+.InputDisciplina[type="text"]:focus,
+.InputDisciplina.TextareaDisciplina:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+/* Estilo específico para o textarea */
+.TextareaDisciplina {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Estilo para o botão de submissão */
+.ButtonDisciplina {
+    background: #50e3c2;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ButtonDisciplina:hover {
+    background: #4a90e2;
+}
+
+/* VISUALIZAÇÃO DE ALUNOS */
+
+.Visualização {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-radius: 10px;
+    color: #333;
+    font-family: sans-serif;
+    /* Adicionado para melhor visualização */
+}
+
+.table-wrapper {
+    background: #fff;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    width: 100%;
+    /* Garante que a tabela use o espaço disponível */
+}
+
+.table-title {
+    padding: 15px;
+    background: #1b263b;
+    color: #fff;
+    border-radius: 3px 3px 0 0;
+}
+
+.table-title h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+}
+
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.table th,
+table.table td {
+    padding: 12px 15px;
+    border: 1px solid #e9e9e9;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+table.table-hover tbody tr:hover {
+    background: #eaeaea;
+}
+
+table.table td a {
+    color: #1b263b;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+table.table td a.edit {
+    color: #FFC107;
+}
+
+table.table td a.delete {
+    color: #F44336;
+}
+
+table.table td i {
+    font-size: 18px;
+}
+
+/* VISUALIZAÇÃO DE ALUNOS */
