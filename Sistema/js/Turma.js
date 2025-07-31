@@ -1,20 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     const turmaForm = document.getElementById('turmaForm');
 
-    // Se o formulário não existir na página, não faz nada.
     if (!turmaForm) {
         return;
     }
 
     const selectProfessor = document.getElementById('turmaProfessor');
     const selectDisciplina = document.getElementById('turmaDisciplina');
-    // Pega uma referência para o botão de submit
     const submitButton = turmaForm.querySelector('button[type="submit"]');
 
-    // ... (a sua função carregarSelects continua a mesma aqui) ...
-
     function carregarSelects() {
-        // O caminho está correto baseado na sua estrutura de pastas
         fetch('../../php/Turma/LDadosTurma.php')
             .then(response => {
                 if (!response.ok) {
@@ -23,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(data => {
-                // Limpa e popula o select de professores
                 selectProfessor.innerHTML = '<option value="">Selecione um Professor</option>';
                 data.professores.forEach(professor => {
                     const option = document.createElement('option');
@@ -32,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     selectProfessor.appendChild(option);
                 });
 
-                // Limpa e popula o select de disciplinas
                 selectDisciplina.innerHTML = '<option value="">Selecione uma Disciplina</option>';
                 data.disciplinas.forEach(disciplina => {
                     const option = document.createElement('option');
@@ -49,14 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     carregarSelects();
 
-    // ----> ADICIONE ESTA LINHA PARA DEPURAR <----
     console.log("Adicionando listener ao formulário de turma.");
 
-    // Listener para o envio do formulário
     turmaForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Previne o recarregamento da página
+        event.preventDefault();
 
-        // ----> PASSO 1: DESABILITAR O BOTÃO E DAR FEEDBACK VISUAL <----
         submitButton.disabled = true;
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Cadastrando...';
 
@@ -72,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert('Turma cadastrada com sucesso!');
                     turmaForm.reset();
                 } else {
-                    // Se a turma já existir (ver Solução 2), mostrará a mensagem correta.
                     alert('Erro ao cadastrar turma: ' + data.message);
                 }
             })
@@ -81,9 +70,47 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Ocorreu um erro de comunicação. Tente novamente.');
             })
             .finally(() => {
-                // ----> PASSO 2: REABILITAR O BOTÃO SEMPRE, NO SUCESSO OU NO ERRO <----
                 submitButton.disabled = false;
                 submitButton.innerHTML = '<i class="fas fa-plus-circle"></i> Adicionar Turma';
             });
     });
+});
+
+alert("Ficheiro Turma.js foi carregado!");
+document.addEventListener('DOMContentLoaded', function () {
+
+    const deleteLinks = document.querySelectorAll('a.delete');
+
+    deleteLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const turmaId = this.getAttribute('data-id');
+
+            if (confirm('Tem a certeza de que deseja deletar esta turma?')) {
+
+                fetch('../../php/Turma/DTurma.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: turmaId })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                            this.closest('tr').remove();
+                        } else {
+                            alert('Erro ao deletar: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro na requisição fetch:', error);
+                        alert('Ocorreu um erro de comunicação com o servidor. Verifique o console (F12).');
+                    });
+            }
+        });
+    });
+
 });

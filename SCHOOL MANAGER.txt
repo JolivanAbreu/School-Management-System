@@ -44,6 +44,8 @@ SCHOOL MANAGER
 │   │   ├── Turma
 │   │   │   ├── CTurma.php
 │   │   │   └── LDadosTurma.php
+│   │   │   └── ATurma.php
+│   │   │   └── DTurma.php
 │   │   │
 │   │   ├── Login.php
 │   │   ├── Logoff.php
@@ -66,6 +68,7 @@ SCHOOL MANAGER
 │   │   └── Turma
 │   │       └── CTurmas.php
 │   │       └── GTurmas.php
+│   │       └── ETurmas.php
 │   │
 │   ├── Admin.php
 │   └── School.php
