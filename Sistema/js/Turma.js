@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-alert("Ficheiro Turma.js foi carregado!");
 document.addEventListener('DOMContentLoaded', function () {
 
     const deleteLinks = document.querySelectorAll('a.delete');

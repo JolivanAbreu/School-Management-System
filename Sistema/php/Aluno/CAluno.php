@@ -1,30 +1,47 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "shoolmanagerdb";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "shoolmanagerdb";
 
-if ($conn->connect_error) {
-    die(json_encode(["success" => false, "message" => "Falha na conexão com o banco de dados."]));
-}
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-$nome = $_POST['nome'];
-$email = $_POST['email'];
+    if ($conn->connect_error) {
+        die("Erro na conexão: " . $conn->connect_error);
+    }
 
-$senhaPadrao = password_hash("123456", PASSWORD_DEFAULT);
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $cpf = $_POST['cpf'];
+    $data_nascimento = $_POST['data_nascimento'];
+    $telefone = $_POST['telefone'];
+    $endereco = $_POST['endereco'];
+    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO alunos (Nome, Email, Senha) VALUES (?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", $nome, $email, $senhaPadrao);
+    if (empty($nome) || empty($email) || empty($_POST['senha'])) {
+        die("Erro: Nome, Email e Senha são obrigatórios.");
+    }
 
-if ($stmt->execute()) {
-    echo "<script>alert('Aluno cadastrado com sucesso!'); window.location.href = '../../System/Aluno/CAlunos.php'</script>";
+    $sql = "INSERT INTO alunos (Nome, Email, CPF, DataNascimento, Telefone, Endereco, Senha) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    
+    $stmt = $conn->prepare($sql);
+
+    $stmt->bind_param("sssssss", $nome, $email, $cpf, $data_nascimento, $telefone, $endereco, $senha);
+
+    if ($stmt->execute()) {
+        header("Location: ../../System/Aluno/CAlunos.php?status=success_create");
+        exit();
+    } else {
+        echo "Erro ao cadastrar o aluno: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+
 } else {
-    echo "<script>alert('Erro ao cadastrar aluno: " . $stmt->error . "'); window.history.back();</script>";
+    header("Location: ../../System/Aluno/CAlunos.php");
+    exit();
 }
-
-$stmt->close();
-$conn->close();
 ?>

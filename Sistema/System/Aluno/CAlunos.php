@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,9 +12,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT IdAluno, Nome, Email, Endereco, Telefone FROM alunos ORDER BY Nome ASC";
 $result = $conn->query($sql);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -23,24 +20,20 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <link rel="stylesheet" href="../../css/Aluno/CAluno.css">
-
     <title>Gerenciamento de Alunos</title>
 </head>
 
 <body>
-
-    <!-- NAVBAR -->
     <header>
         <div class="Navbar">
             <a href="#" class="Logo">Logo</a>
             <div class="Hamburger" onclick="toggleMenu()">☰</div>
             <ul class="Nav-menu">
-                <li class="Nav-item"><a href="#">Institucional <i class="uil uil-angle-down"></i> </a>
+                <li class="Nav-item"><a href="#">Institucional <i class="uil uil-angle-down"></i></a>
                     <ul>
                         <li><a href="#">Calendario Educacional</a></li>
                         <li><a href="#">Grandes Conquistas</a></li>
@@ -67,32 +60,37 @@ $result = $conn->query($sql);
             </ul>
         </div>
     </header>
-    <!-- NAVBAR -->
 
-    <!-- INFORMAÇÕES -->
     <div class="Cadastro">
         <section class="Alunos">
-            <h2 class="H2Aluno"><i class="fas fa-user"></i> Cadastro de Alunos</h2>
+            <h2 class="H2Aluno"><i class="fas fa-user-plus"></i> Cadastro de Alunos</h2>
             <form action="../../php/Aluno/CAluno.php" method="POST" class="AlunosForm">
                 <label for="alunoNome" class="LabelAluno">Nome:</label>
                 <input type="text" id="alunoNome" class="InputAlunos" name="nome" required>
 
-                <label for="alunoCpf" class="LabelAluno">CPF:</label>
-                <input type="text" id="alunoCpf" class="InputAlunos" name="cpf">
-
                 <label for="alunoEmail" class="LabelAluno">Email:</label>
                 <input type="email" id="alunoEmail" class="InputAlunos" name="email" required>
 
+                <label for="alunoCpf" class="LabelAluno">CPF:</label>
+                <input type="text" id="alunoCpf" class="InputAlunos" name="cpf">
+
                 <label for="alunoDataNascimento" class="LabelAluno">Data de Nascimento:</label>
                 <input type="date" id="alunoDataNascimento" class="InputAlunos" name="data_nascimento">
+                
+                <label for="alunoTelefone" class="LabelAluno">Telefone:</label>
+                <input type="text" id="alunoTelefone" class="InputAlunos" name="telefone">
+
+                <label for="alunoEndereco" class="LabelAluno">Endereço:</label>
+                <textarea id="alunoEndereco" class="InputAlunos" name="endereco"></textarea>
+                
+                <label for="alunoSenha" class="LabelAluno">Senha:</label>
+                <input type="password" id="alunoSenha" class="InputAlunos" name="senha" required>
 
                 <button type="submit" class="ButtonAlunos"><i class="fas fa-plus-circle"></i> Adicionar Aluno</button>
             </form>
         </section>
     </div>
-    <!-- INFORMAÇÕES -->
 
-    <!-- VISUALIZAÇÃO DE ALUNOS -->
     <div class="Visualização">
         <div class="table-wrapper">
             <div class="table-title">
@@ -105,9 +103,6 @@ $result = $conn->query($sql);
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>
-                            <input type="checkbox" id="selectAll">
-                        </th>
                         <th>Nome</th>
                         <th>Email</th>
                         <th>Endereço</th>
@@ -120,19 +115,18 @@ $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($aluno = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td><input type='checkbox' id='checkbox" . htmlspecialchars($aluno['IdAluno']) . "' name='options[]' value='" . htmlspecialchars($aluno['IdAluno']) . "'></td>";
                             echo "<td>" . htmlspecialchars($aluno['Nome']) . "</td>";
                             echo "<td>" . htmlspecialchars($aluno['Email']) . "</td>";
                             echo "<td>" . htmlspecialchars($aluno['Endereco']) . "</td>";
                             echo "<td>" . htmlspecialchars($aluno['Telefone']) . "</td>";
                             echo "<td>";
-                            echo "<a href='#editEmployeeModal' class='edit' data-toggle='modal'><i class='fa-solid fa-pen'></i></a>";
-                            echo "<a href='#deleteEmployeeModal' class='delete' data-toggle='modal'><i class='fa-solid fa-trash'></i></a>";
+                            echo "<a href='EAlunos.php?id=" . htmlspecialchars($aluno['IdAluno']) . "' class='edit'><i class='fa-solid fa-pen'></i></a>";
+                            echo "<a href='#deleteEmployeeModal' class='delete' data-toggle='modal' data-id='" . htmlspecialchars($aluno['IdAluno']) . "'><i class='fa-solid fa-trash'></i></a>";
                             echo "</td>";
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='6' style='text-align:center;'>Nenhum aluno encontrado.</td></tr>";
+                        echo "<tr><td colspan='5' style='text-align:center;'>Nenhum aluno encontrado.</td></tr>";
                     }
                     $conn->close();
                     ?>
@@ -140,15 +134,7 @@ $result = $conn->query($sql);
             </table>
         </div>
     </div>
-    <!-- VISUALIZAÇÃO DE ALUNOS -->
-
-    <!-- BOTÃO DE ROLAGEM -->
-    <button id="voltar">
-        <i class="fa-solid fa-caret-up"></i>
-    </button>
-    <!-- BOTÃO DE ROLAGEM -->
-
+    
     <script src="../../js/index.js"></script>
 </body>
-
 </html>

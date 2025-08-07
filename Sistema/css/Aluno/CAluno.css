@@ -256,3 +256,49 @@ table.table td i {
 }
 
 /* VISUALIZAÇÃO DE ALUNOS */
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.ButtonAlunos,
+.ButtonVoltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.ButtonAlunos {
+    background-color: #20c997;
+}
+
+.ButtonVoltar {
+    background-color: #6c757d;
+}
+
+.ButtonAlunos:hover {
+    background-color: #1baa80;
+}
+
+.ButtonVoltar:hover {
+    background-color: #5a6268;
+}
+
+.ButtonAlunos i,
+.ButtonVoltar i {
+    margin-right: 8px;
+}

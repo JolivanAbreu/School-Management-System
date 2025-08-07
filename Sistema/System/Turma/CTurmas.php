@@ -110,7 +110,7 @@ $result = $conn->query($sql);
         </section>
     </div>
     <!-- INFORMAÇÕES -->
-     
+
     <div class="Visualização">
         <div class="table-wrapper">
             <div class="table-title">
@@ -147,7 +147,6 @@ $result = $conn->query($sql);
                             echo "<td>" . htmlspecialchars($turma['Horario']) . "</td>";
                             echo "<td>";
                             echo "<a href='ETurmas.php?id=" . htmlspecialchars($turma['IdTurma']) . "' class='edit'><i class='fa-solid fa-pen'></i></a>";
-
                             echo "<a href='#' class='delete' data-id='" . htmlspecialchars($turma['IdTurma']) . "'><i class='fa-solid fa-trash'></i></a>";
                             echo "</td>";
                             echo "</tr>";
@@ -165,7 +164,6 @@ $result = $conn->query($sql);
         <i class="fa-solid fa-caret-up"></i>
     </button>
 
-    <script src="../../js/Turma.js"></script>
     <script src="../../js/Turma.js"></script>
 </body>
 
